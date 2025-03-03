@@ -62,26 +62,27 @@ namespace WordScrambleGame
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Wrong. Try again!");
-                if(_randomWord.Equals("Programming", StringComparison.OrdinalIgnoreCase))
+                switch (_randomWord.ToLower())
                 {
-                    Console.WriteLine("Hint: telling your computer what to do in a language it understands.");
-                }
-                else if(_randomWord.Equals("Computer", StringComparison.OrdinalIgnoreCase))
-                {
-                    Console.WriteLine("Hint: an electronic device.");
-                }
-                else if(_randomWord.Equals("Developer", StringComparison.OrdinalIgnoreCase))
-                {
-                    Console.WriteLine("Hint: a person that writes programs");
-                }
-                else if(_randomWord.Equals("Monitor", StringComparison.OrdinalIgnoreCase))
-                {
-                    Console.WriteLine("Hint: an output device that displays visuals");
-                }
-                else
-                {
-                    Console.WriteLine("Hint: an input device that allows you to type.");
-                }                    
+                    case "Programming":
+                        Console.WriteLine("Hint: telling your computer what to do in a language it understands.");
+                        break;
+                    case "Computer":
+                        Console.WriteLine("Hint: an electronic device.");
+                        break;
+                    case "developer":
+                        Console.WriteLine("Hint: a person that writes programs");
+                        break;
+                    case "monitor":
+                        Console.WriteLine("Hint: an output device that displays visuals");
+                        break;
+                    case "keyboard":
+                        Console.WriteLine("Hint: an input device that allows you to type.");
+                        break;
+                    default:
+                        Console.WriteLine("Hint: No hint available for this word.");
+                        break;
+                };                 
                 Console.ResetColor();
                 Console.Write("Your Guess: ");
                 userGuess = Console.ReadLine();
